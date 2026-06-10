@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Ticket Booking</title>
+    <link rel="StyleSheet" href="Movie Ticket Booking/MovieTicketBooking.css"></head>
+    <body>
+         <h1>Movie Ticket Booking</h1>
+         <div id="ticket"></div>
+         <div id="notifications"></div>
+         <script>
+            const movies=[
+                {
+                    id:1,
+                    name: "Avengers"
+                },
+                {
+                    id:2,
+                    name: "Bat Man"
+                },
+                {
+                    id:3,
+                    name: "Spider Man"
+                }
+            ];
+            function movie(){
+                const MovieContainer=document.getElementById("ticket");
+                movies.forEach(function(tickets){
+                MovieContainer.innerHTML+=
+                ` <div class="Ticketscard">
+                    <h3>${tickets.name}</h3>
+                    <button onclick="bookTicket('${tickets.name}')">Book Ticket</button>
+                </div>
+                `;
+            });
+            }
+            function bookTicket(moviename){
+                const bookingContainer=document.getElementById("notifications");
+                bookingContainer.innerHTML+=
+                ` <div class="bookingCard">
+                    <h3>Latest Notification</h3>
+                    <h3>Ticket Booked for ${moviename}</h3>
+                </div>
+                `;
+            }
+            movie();
+         </script>
+    </body>
+</html>
+         
